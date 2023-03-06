@@ -2,8 +2,10 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
-import ThemeSwitch from '@/components/atoms/ThemeSwitch'
+import Button from '@/components/atoms/Button'
+import dynamic from 'next/dynamic'
 
+const ThemeSwitch = dynamic(() => import('@/components/atoms/ThemeSwitch'), { ssr: false})
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
@@ -18,6 +20,9 @@ export default function Home() {
       <main>
          <p className='dark:text-white text-red-900 text-3xl font-bold'>done with starter</p>
          <ThemeSwitch />
+         <Button size='large' variant='secondary'>
+          contact me
+         </Button>
       </main>
     </>
   )

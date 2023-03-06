@@ -1,4 +1,5 @@
 import { useTheme } from 'next-themes';
+import { useEffect } from 'react';
 
 const ThemeSwitch = () => {
 	const { theme, setTheme } = useTheme();
