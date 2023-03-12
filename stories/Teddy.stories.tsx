@@ -1,5 +1,3 @@
-
-
 export default {
-    title: Love/Ethiopia,
-}
+  title: Love / Ethiopia,
+};

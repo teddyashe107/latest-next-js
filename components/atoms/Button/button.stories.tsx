@@ -2,8 +2,8 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import Button from './index';
 
 export default {
-	title: 'Love/Button',
-	component: Button,
+  title: 'Love/Button',
+  component: Button,
 } as ComponentMeta<typeof Button>;
 
 // export const Primary = (
@@ -17,17 +17,17 @@ export default {
 // 	</Button>
 // );
 
-
-
 // const Template: ComponentStory<typeof Button> = (args) => <Button {...args}> </Button>
 export const Primary: ComponentStory<typeof Button> = () => (
-	<Button variant='primary' size='large' fullWidth>Button Teddy</Button>
+  <Button variant="primary" size="large" fullWidth>
+    Button Teddy
+  </Button>
 );
 //
 // export const Primary = Template.bind({});
-// 
-// 
-// 
+//
+//
+//
 // Primary.args = {
 // 	variant: 'primary',
 //     size: 'small'
