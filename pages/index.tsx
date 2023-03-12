@@ -9,6 +9,15 @@ const ThemeSwitch = dynamic(() => import('@/components/atoms/ThemeSwitch'), { ss
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+
+  // variadic function in typescript 
+
+    function sumVariadicSafe(...numbers: number[]) {
+      return numbers.reduce((total, n) => total + n, 0)
+    }
+
+    const sum = sumVariadicSafe()
+
   return (
     <>
       <Head>
@@ -20,7 +29,7 @@ export default function Home() {
       <main>
          <p className='dark:text-white text-red-900 text-3xl font-bold'>done with starter</p>
          <ThemeSwitch />
-         <Button size='large' variant='secondary'>
+         <Button>
           contact me
          </Button>
       </main>

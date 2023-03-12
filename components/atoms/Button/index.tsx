@@ -1,6 +1,6 @@
 import { cva, VariantProps } from 'class-variance-authority';
 
-const buttonStyles = cva(['font-semibold text-white'], {
+const buttonStyles = cva(['font-semibold text-white bg-red-900'], {
 	variants: {
 		variant: {
 			primary: ['bg-lime-800'],
@@ -12,7 +12,7 @@ const buttonStyles = cva(['font-semibold text-white'], {
             large: ['text-md', 'py-3', 'px-6', 'rounded-lg']
 		},
         fullWidth: {
-            'true': 'w-full'
+            true: 'w-full'
         }
 	},
     compoundVariants: [
@@ -23,19 +23,20 @@ const buttonStyles = cva(['font-semibold text-white'], {
         }
     ],
     defaultVariants: {
-        variant: 'primary', 
-        size: 'small'
+        variant: 'primary'
     }
 });
 
 
 
 export interface Props extends  VariantProps<typeof buttonStyles> {
-    children: React.ReactNode
+    children: React.ReactNode,
+    onClick?: () => void,
+  //  label: string
 }
 
-const Button = ({ variant, size, fullWidth, children }: Props) => {
-	return <button className={buttonStyles({ variant, size, fullWidth})}>{children}</button>;
+const Button = ({ variant, size, fullWidth, children, ...props }: Props) => {
+	return <button className={buttonStyles({ variant, size, fullWidth})} {...props}>{children}</button>;
 };
 
 export default Button;
