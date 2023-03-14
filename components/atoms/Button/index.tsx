@@ -1,9 +1,9 @@
 import { cva, VariantProps } from 'class-variance-authority';
 
-const buttonStyles = cva(['font-semibold text-white bg-red-900'], {
+const buttonStyles = cva(['font-semibold text-white'], {
   variants: {
     variant: {
-      primary: ['bg-lime-800'],
+      primary: ['bg-lime-800', 'uppercase'],
       secondary: ['bg-purple-600', 'uppercase'],
     },
     size: {
@@ -27,15 +27,15 @@ const buttonStyles = cva(['font-semibold text-white bg-red-900'], {
   },
 });
 
-export interface Props extends VariantProps<typeof buttonStyles> {
+export interface IButton extends VariantProps<typeof buttonStyles> {
   children: React.ReactNode;
   onClick?: () => void;
   //  label: string
 }
 
-const Button = ({ variant, size, fullWidth, children, ...props }: Props) => {
+const Button:React.FC<IButton> = ({ variant, size, children,  ...props }) => {
   return (
-    <button className={buttonStyles({ variant, size, fullWidth })} {...props}>
+    <button className={buttonStyles({ variant, size })} {...props}>
       {children}
     </button>
   );

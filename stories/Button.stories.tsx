@@ -14,10 +14,6 @@ export default {
 } as ComponentMeta<typeof Button>;
 
 
-
-
-
-
 // const Primary = () => <Button>Primary</Button>
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
