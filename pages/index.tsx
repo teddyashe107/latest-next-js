@@ -15,6 +15,10 @@ export default function Home() {
 
   const sum = sumVariadicSafe();
 
+  const handleSubmit = () => {
+    console.log('handle submit');
+  };
+
   return (
     <>
       <Head>
@@ -28,7 +32,7 @@ export default function Home() {
           done with starter
         </p>
         <ThemeSwitch />
-        <Button>contact me</Button>
+        <Button onClick={handleSubmit}>contact me</Button>
       </main>
     </>
   );

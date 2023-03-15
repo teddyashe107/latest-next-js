@@ -1,40 +1,54 @@
-import { IButton } from ".";
+import { IButton } from '.';
 
-
-const primary: IButton = {
-  variant: 'primary',
+const text: IButton = {
+  variant: 'text',
   size: 'medium',
-  children: 'hello',
+  children: 'text',
 };
 
-const secondary: IButton = {
-  variant: 'secondary',
+const contained: IButton = {
+  variant: 'contained',
   size: 'medium',
-  children: 'hello',
+  children: 'contained',
+};
+
+const outlined: IButton = {
+  variant: 'outlined',
+  size: 'large',
+  children: 'outlined',
 };
 
 const large: IButton = {
-  variant: 'primary',
+  variant: 'contained',
   size: 'large',
-  children: 'hello',
+  children: 'large',
 };
 
 const medium: IButton = {
-  variant: 'primary',
+  variant: 'contained',
   size: 'medium',
-  children: 'hello',
+  children: 'medium',
 };
 
 const small: IButton = {
-  variant: 'primary',
+  variant: 'contained',
   size: 'small',
-  children: 'hello',
+  children: 'small',
+};
+
+const fullWidth: IButton = {
+  variant: 'contained',
+  size: 'small',
+  children: 'fullWidth',
+  fullWidth: true,
 };
 
 export const mockButtonProps = {
-  primary,
-  secondary,
+  text,
+  contained,
+  outlined,
   large,
   medium,
-  small
+  small,
+  fullWidth,
 };

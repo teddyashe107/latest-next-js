@@ -1,31 +1,29 @@
 import { cva, VariantProps } from 'class-variance-authority';
 
-const buttonStyles = cva(['font-semibold text-white'], {
-  variants: {
-    variant: {
-      primary: ['bg-lime-800', 'uppercase'],
-      secondary: ['bg-purple-600', 'uppercase'],
+const buttonStyles = cva(
+  ['px-4 py-2 font-semibold uppercase cursor-pointer rounded-sm'],
+  {
+    variants: {
+      variant: {
+        text: ['text-blue-500'],
+        contained: ['bg-blue-500 text-white'],
+        outlined: ['outline outline-1 outline-blue-500 text-blue-500'],
+      },
+      size: {
+        small: ['text-sm', 'py-1', 'px-2', 'rounded-sm'],
+        medium: ['text-base', 'py-2', 'px-6', 'rounded-md'],
+        large: ['text-lg', 'px-12', 'py-4', 'rounded-lg'],
+      },
+      fullWidth: {
+        true: 'w-full',
+      },
     },
-    size: {
-      small: ['text-sm', 'py-1', 'px-2', 'rounded-sm'],
-      medium: ['text-base', 'py-2', 'px-4', 'rounded-md'],
-      large: ['text-md', 'py-3', 'px-6', 'rounded-lg'],
+    compoundVariants: [{}],
+    defaultVariants: {
+      variant: 'contained',
     },
-    fullWidth: {
-      true: 'w-full',
-    },
-  },
-  compoundVariants: [
-    {
-      // variant: 'primary',
-      // size: 'medium',
-      // className:'rounded-lg text-red-800'
-    },
-  ],
-  defaultVariants: {
-    variant: 'primary',
-  },
-});
+  }
+);
 
 export interface IButton extends VariantProps<typeof buttonStyles> {
   children: React.ReactNode;
@@ -33,11 +31,19 @@ export interface IButton extends VariantProps<typeof buttonStyles> {
   //  label: string
 }
 
-const Button:React.FC<IButton> = ({ variant, size, children,  ...props }) => {
+const Button: React.FC<IButton> = ({
+  variant,
+  size,
+  fullWidth,
+  children,
+  ...props
+}) => {
   return (
-    <button className={buttonStyles({ variant, size })} {...props}>
-      {children}
-    </button>
+    <div className="cursor">
+      <button className={buttonStyles({ variant, size, fullWidth })} {...props}>
+        {children}
+      </button>
+    </div>
   );
 };
 
