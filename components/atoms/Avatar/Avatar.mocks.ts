@@ -3,43 +3,40 @@ import { IAvatar } from '.';
 const red: IAvatar = {
   variant: 'red',
   size: 'small',
-  src: 'https://cdn.pixabay.com/photo/2016/08/20/05/38/avatar-1606916__340.png',
-  alt: 'avatar placeholder',
 };
 
 const image: IAvatar = {
-  ...red,
-  src: '',
-  alt: '',
-}
+  size: 'large',
+  src: 'https://cdn.pixabay.com/photo/2016/08/20/05/38/avatar-1606916__340.png',
+  alt: 'avatar placeholder',
+};
 const yellow: IAvatar = {
-  ...red,
   variant: 'yellow',
   children: 'AB',
 };
 
 const blue: IAvatar = {
-  ...red,
+  ...yellow,
   variant: 'blue',
 };
 
 const black: IAvatar = {
-  ...red,
+  ...yellow,
   variant: 'black',
 };
 
 const small: IAvatar = {
-  ...red,
+  ...yellow,
   size: 'small',
 };
 
 const medium: IAvatar = {
-  ...red,
+  ...yellow,
   size: 'medium',
 };
 
 const large: IAvatar = {
-  ...red,
+  ...yellow,
   size: 'large',
 };
 

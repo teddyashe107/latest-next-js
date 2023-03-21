@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Button from '@/components/atoms/Button';
 import dynamic from 'next/dynamic';
+import Avatar from '@/components/atoms/Avatar';
 
 const ThemeSwitch = dynamic(() => import('@/components/atoms/ThemeSwitch'), {
   ssr: false,
@@ -33,6 +34,11 @@ export default function Home() {
         </p>
         <ThemeSwitch />
         <Button onClick={handleSubmit}>contact me</Button>
+        <Avatar
+          variant="yellow"
+          src="https://cdn.pixabay.com/photo/2016/08/20/05/38/avatar-1606916__340.png"
+          alt="placeholder image"
+        />
       </main>
     </>
   );

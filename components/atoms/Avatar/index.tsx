@@ -29,23 +29,17 @@ const avatarStyles = cva(
 
 export interface IAvatar extends VariantProps<typeof avatarStyles> {
   children?: React.ReactNode;
-  alt: string;
-  src: string;
+  alt?: string;
+  src?: string;
 }
 
-const Avatar: React.FC<IAvatar> = ({ variant, size, src, alt, children }) => {
+const Avatar: React.FC<IAvatar> = ({ variant, size, alt, src, children }) => {
   return (
     <>
-      {src ? (
+      {!src || !alt ? (
         <div className={`${avatarStyles({ variant, size })}`}>{children}</div>
       ) : (
-        <Image
-          src={src}
-          alt={alt}
-          width={50}
-          height={50}
-          className="rounded-full"
-        />
+        <Image src={src} alt={alt} width={50} height={50} className="rounded-full" />
       )}
     </>
   );
