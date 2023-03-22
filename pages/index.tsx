@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Button from '@/components/atoms/Button';
 import dynamic from 'next/dynamic';
 import Avatar from '@/components/atoms/Avatar';
+import Badge from '@/components/atoms/Badge';
 
 const ThemeSwitch = dynamic(() => import('@/components/atoms/ThemeSwitch'), {
   ssr: false,
@@ -39,6 +40,18 @@ export default function Home() {
           src="https://cdn.pixabay.com/photo/2016/08/20/05/38/avatar-1606916__340.png"
           alt="placeholder image"
         />
+
+        <Badge badgeContent={1} variant='yellow'>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            className="w-7 h-7"
+          >
+            <path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z" />
+            <path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z" />
+          </svg>
+        </Badge>
       </main>
     </>
   );
