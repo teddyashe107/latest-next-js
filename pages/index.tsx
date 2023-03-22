@@ -2,7 +2,8 @@ import Head from 'next/head';
 import Button from '@/components/atoms/Button';
 import dynamic from 'next/dynamic';
 import Avatar from '@/components/atoms/Avatar';
-import Badge from '@/components/atoms/Badge';
+import Badge from '@/components/molecules/Badge';
+import Icon from '@/components/atoms/utility/Icons';
 
 const ThemeSwitch = dynamic(() => import('@/components/atoms/ThemeSwitch'), {
   ssr: false,
@@ -41,7 +42,7 @@ export default function Home() {
           alt="placeholder image"
         />
 
-        <Badge badgeContent={1} variant='yellow'>
+        <Badge badgeContent={1} variant="red">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 20 20"
@@ -52,6 +53,8 @@ export default function Home() {
             <path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z" />
           </svg>
         </Badge>
+
+         
       </main>
     </>
   );
