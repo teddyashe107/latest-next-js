@@ -7,7 +7,7 @@ export interface ILogo {
 }
 const Logo: React.FC<ILogo> = ({ src, alt, title }) => {
   return (
-    <div className='inline-flex items-center gap-2 rounded-sm overflow-hidden'>
+    <div className='inline-flex items-center gap-2 rounded-sm overflow-hidden cursor-pointer'>
       <Image src={src} alt={alt} width={30} height={30} />
       <p className='font-extrabold uppercase tracking-widest'>{title}</p>
     </div>

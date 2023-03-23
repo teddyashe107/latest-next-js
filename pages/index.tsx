@@ -4,6 +4,7 @@ import dynamic from 'next/dynamic';
 import Avatar from '@/components/atoms/Avatar';
 import Badge from '@/components/molecules/Badge';
 import Icon from '@/components/atoms/utility/Icons';
+import Header from '@/components/organisms/Header';
 
 const ThemeSwitch = dynamic(() => import('@/components/atoms/ThemeSwitch'), {
   ssr: false,
@@ -54,7 +55,7 @@ export default function Home() {
           </svg>
         </Badge>
 
-         
+        <Header />
       </main>
     </>
   );
