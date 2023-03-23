@@ -27,7 +27,7 @@ const buttonStyles = cva(
 
 export interface IButton extends VariantProps<typeof buttonStyles> {
   children: React.ReactNode;
-  onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
+  onClick?: () => void;
   //  label: string
 }
 
