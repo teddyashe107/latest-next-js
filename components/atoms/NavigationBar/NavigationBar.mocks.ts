@@ -1,10 +1,10 @@
-import { INavigationBar } from '.';
+import {  NavigationBarProps } from '.';
 
-const vertical: INavigationBar = {
+const vertical: NavigationBarProps = {
   variant: 'vertical',
 };
 
-const horizontal: INavigationBar = {};
+const horizontal: NavigationBarProps = {};
 
 export const mockNavigationBarProps = {
   vertical,

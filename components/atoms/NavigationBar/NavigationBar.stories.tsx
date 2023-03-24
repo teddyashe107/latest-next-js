@@ -1,5 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import NavigationBar, { INavigationBar } from '.';
+import NavigationBar, { NavigationBarProps } from '.';
 import { mockNavigationBarProps } from './NavigationBar.mocks';
 
 export default {
@@ -18,9 +18,9 @@ const Template: ComponentStory<typeof NavigationBar> = (args) => (
 export const VerticalNavigation = Template.bind({});
 VerticalNavigation.args = {
   ...mockNavigationBarProps.vertical,
-} as INavigationBar;
+} as NavigationBarProps;
 
 export const HorizontalNavigation = Template.bind({});
 HorizontalNavigation.args = {
   ...mockNavigationBarProps.horizontal,
-} as INavigationBar;
+} as NavigationBarProps;
