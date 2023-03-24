@@ -1,5 +1,6 @@
 import '../styles/globals.css';
 import * as NextImage from 'next/image';
+import {themes} from '@storybook/theming'
 
 const BREAKPOINTS_INT = {
   xs: 375,
@@ -34,6 +35,20 @@ Object.defineProperty(NextImage, 'default', {
 });
 
 export const parameters = {
+  darkMode: {
+       // Override the default dark theme
+       dark: { ...themes.dark, appBg: 'black'},
+       // Override the default light theme
+       light: { ...themes.normal, appBg: 'light'}  ,
+
+       // Set the initial theme
+       current: 'light',
+
+       darkClass: 'lights-out',
+       lightClass: 'lights-on',
+       classTarget: 'html',
+       stylePreview: true
+  },
   actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {
     matchers: {

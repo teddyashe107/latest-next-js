@@ -1,17 +1,19 @@
 import NavigationBar from "@/components/atoms/NavigationBar";
 import Logo from "@/components/atoms/utility/Logo";
 
-export interface ILogoAndNavigationBar {}
+export interface ILogoAndNavigationBar {
+  toggleNavigation?: boolean;
+}
 
-const LogoAndNavigationBar: React.FC<ILogoAndNavigationBar> = () => {
+const LogoAndNavigationBar: React.FC<ILogoAndNavigationBar> = ({toggleNavigation = false}) => {
   return (
-    <div className="flex items-center justify-between w-full">
+    <div className=" md:flex items-center justify-between w-full">
       <Logo
         alt="logo placeholder"
         src="https://cdn.pixabay.com/photo/2016/08/20/05/38/avatar-1606916__340.png"
         title="teddy"
       />
-      <NavigationBar />
+      <NavigationBar hidden={toggleNavigation} />
     </div>
   );
 };

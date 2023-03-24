@@ -1,11 +1,13 @@
 import { cva, VariantProps } from 'class-variance-authority';
 
 const buttonStyles = cva(
-  ['px-4 py-2 font-semibold uppercase cursor-pointer rounded-sm hover:text-blue-300'],
+  [
+    'px-4 py-2 font-semibold uppercase cursor-pointer rounded-sm hover:text-blue-300',
+  ],
   {
     variants: {
       variant: {
-        text: ['text-blue-500 dark:hover:text-rose-700'],
+        text: ['text-blue-700 dark:text-rose-700 dark:hover:text-rose-600'],
         contained: ['bg-blue-500 text-white'],
         outlined: ['outline outline-1 outline-blue-500 text-blue-500'],
       },
@@ -16,6 +18,9 @@ const buttonStyles = cva(
       },
       fullWidth: {
         true: 'w-full',
+      },
+      clicked: {
+        true: 'text-rose-700',
       },
     },
     compoundVariants: [{}],
@@ -36,11 +41,15 @@ const Button: React.FC<IButton> = ({
   size,
   fullWidth,
   children,
+  clicked,
   ...props
 }) => {
   return (
     <div className="cursor">
-      <button className={buttonStyles({ variant, size, fullWidth })} {...props}>
+      <button
+        className={buttonStyles({ variant, size, fullWidth, clicked })}
+        {...props}
+      >
         {children}
       </button>
     </div>

@@ -1,23 +1,41 @@
 import { useTheme } from 'next-themes';
-import { useEffect } from 'react';
+import { useState } from 'react';
+import Button from '../Button';
 
-const ThemeSwitch = () => {
+interface IThemeSwitch {
+onClick?: () => void;
+}
+const ThemeSwitch: React.FC<IThemeSwitch> = ({onClick}) => {
+    const [clicked, setClicked] = useState(false);
+
+ 
   const { theme, setTheme } = useTheme();
   const dark = theme === 'dark';
 
   const toggleTheme = () => {
     setTheme(dark ? 'light' : 'dark');
+    setClicked(clicked ? false : true);
   };
 
   if (typeof window === 'undefined') return null;
 
   return (
-    <button
-      onClick={toggleTheme}
-      className="dark:bg-green-900 dark:bg-opacity-20 dark:text-gray-50 bg-green-100 text-gray-500 pl-2 pr-2 rounded-md text-xs p-1"
-    >
-      Toggle theme
-    </button>
+    <Button onClick={toggleTheme} variant='text' clicked={clicked}>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        strokeWidth={1.5}
+        stroke="currentColor"
+        className="w-6 h-6"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"
+        />
+      </svg>
+    </Button>
   );
 };
 

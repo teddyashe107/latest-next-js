@@ -16,6 +16,7 @@ module.exports = {
   /** Expose public folder to storybook as static */
   staticDirs: ['../public'],
   addons: [
+    'storybook-dark-mode',
     '@storybook/addon-links',
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
