@@ -36,7 +36,7 @@ const NavigationBar: React.FC<INavigationBar> = ({ variant, hidden }) => {
       {ListItem.map((item, index) => (
         <li
           key={index}
-          className={`${active === index ? 'text-rose-700 dark:text-rose-700' : 'text-gray-700'} py-2 md:py-0  hover:text-gray-900 dark:text-gray-100 dark:hover:text-rose-700 cursor-pointer border-b`}
+          className={`${active === index ? 'text-rose-700 dark:text-rose-700' : 'text-gray-700'} py-2 md:py-0  hover:text-gray-900 dark:text-gray-100 dark:hover:text-rose-700 cursor-pointer md:border-b`}
           onClick={() => handleClick(index)}
         >
           {item}

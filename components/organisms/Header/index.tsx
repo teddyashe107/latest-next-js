@@ -15,16 +15,19 @@ const Header: React.FC<IHeader> = () => {
 
   function handleToggle() {
     setToggle(toggle ? false : true);
-    setClicked(clicked ? false : true)
+    setClicked(clicked ? false : true);
   }
 
   return (
     <Container size="medium">
-      <div className="flex md:items-center justify-between px-8 border-b-2 border-gray-300 shadow-lg dark:border-b-2 dark:border-gray-800 dark:bg-black dark:text-white">
+      <div className="flex md:items-center justify-between px-8 border-b-2 border-gray-300 shadow-md dark:border-b-2 dark:border-gray-800 dark:bg-black dark:text-white">
         <LogoAndNavigationBar toggleNavigation={toggle} />
+        {/* theme switcher button with ssr false this component depends on the clint window object  */}
         <ThemeSwitch />
         <span className="md:hidden">
+          {/* change the button icon based on the toggle state */}
           {toggle ? (
+            // button with hamburger icon if toggle is true
             <Button variant="text" onClick={handleToggle} clicked={clicked}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -42,7 +45,8 @@ const Header: React.FC<IHeader> = () => {
               </svg>
             </Button>
           ) : (
-            <Button variant='text' onClick={handleToggle} clicked={clicked}>
+            // button with x icon if toggle is false
+            <Button variant="text" onClick={handleToggle} clicked={clicked}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
