@@ -1,5 +1,5 @@
 import { cva, VariantProps } from 'class-variance-authority';
-
+import styles from './Heading.module.css'
 const headingStyles = cva('font-bold tracking-wider dark:text-gray-100', {
   variants: {
     variant: {
@@ -24,7 +24,7 @@ export interface IHeading extends VariantProps<typeof headingStyles> {
 
 const Heading: React.FC<IHeading> = ({ text, variant }) => {
  const Tag = variant;
- return <Tag className={headingStyles({variant})}>{text}</Tag>
+ return <Tag className={`${headingStyles({variant})} ${styles['animate-slide-in']}`}>{text}</Tag>
 };
 
 export default Heading;
