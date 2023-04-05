@@ -24,7 +24,7 @@ const navigationBarStyles = cva('mt-4 md:mt-0 md:flex gap-x-8', {
 export interface NavigationBarProps
   extends VariantProps<typeof navigationBarStyles> {
   icons?: React.ReactNode[];
-  listItems: string[];
+  listItems?: string[];
   activeState?: boolean;
 }
 
