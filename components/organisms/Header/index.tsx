@@ -19,8 +19,8 @@ const Header: React.FC<IHeader> = () => {
   }
 
   return (
-    <Container size="medium">
-      <div className="flex md:items-center justify-between px-8 border-b-2 border-gray-300 shadow-md dark:border-b-2 dark:border-gray-800 dark:bg-black dark:text-white">
+    <Container>
+      <div className="flex md:items-center justify-between  py-2   dark:text-white">
         <LogoAndNavigationBar toggleNavigation={toggle} />
         {/* theme switcher button with ssr false this component depends on the clint window object  */}
         <ThemeSwitch />

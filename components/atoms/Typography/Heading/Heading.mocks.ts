@@ -1,18 +1,19 @@
-import { IHeading } from '.';
+import { HeadingProps } from '.';
 
-const standard: IHeading = {
+const standard: HeadingProps = {
   variant: 'h1',
-  text: 'standard',
+  children: 'standard',
+  firstLetter: true
 };
 
-const primary: IHeading = {
+const primary: HeadingProps = {
   variant: 'h2',
-  text: 'primary',
+  children: 'primary',
 };
 
-const secondary: IHeading = {
+const secondary: HeadingProps = {
   variant: 'h3',
-  text: 'Secondary',
+  children: 'Secondary',
 };
 
 export const mockHeadingProps = {

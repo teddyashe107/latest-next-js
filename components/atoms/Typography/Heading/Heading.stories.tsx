@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import Heading, { IHeading } from ".";
+import Heading, { HeadingProps } from ".";
 import { mockHeadingProps } from "./Heading.mocks";
 
 export default {
@@ -12,15 +12,15 @@ const Template: ComponentStory<typeof Heading> = (args) => <Heading {...args} />
 export const Standard = Template.bind({});
 Standard.args = {
     ...mockHeadingProps.standard
-} as IHeading;
+} as HeadingProps;
 
 export const Primary = Template.bind({});
 Primary.args = {
   ...mockHeadingProps.primary,
-} as IHeading;
+} as HeadingProps;
 
 export const Secondary = Template.bind({});
 Secondary.args = {
   ...mockHeadingProps.secondary,
-} as IHeading;
+} as HeadingProps;
 

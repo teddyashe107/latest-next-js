@@ -1,9 +1,9 @@
 import { cva, VariantProps } from 'class-variance-authority';
 
-const iconStyles = cva('', {
+const iconStyles = cva('text-gray-900 dark:text-white', {
   variants: {
     size: {
-      small: 'w-6 h-6',
+      small: 'w-4 h-4',
       medium: 'w-8 h-8',
       large: 'w-10 h-10',
     },

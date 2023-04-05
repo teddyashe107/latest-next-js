@@ -1,4 +1,4 @@
-import { ComponentStory, ComponentMeta, storiesOf } from '@storybook/react';
+import { ComponentStory, ComponentMeta} from '@storybook/react';
 import Badge, { IBadge } from '.';
 import { mockTemplateProps } from './Badge.mocks';
 

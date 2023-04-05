@@ -2,7 +2,7 @@ import Button from '@/components/atoms/Button';
 import TextField from '@/components/atoms/Inputs/TextField';
 import Icon from '@/components/atoms/utility/Icons';
 import Label from '@/components/atoms/utility/Lable';
-import { ChangeEvent, MouseEventHandler } from 'react';
+import { ChangeEvent} from 'react';
 
 export interface ISearchBar {
   onClick?: () => void;

@@ -8,8 +8,8 @@ const buttonStyles = cva(
     variants: {
       variant: {
         text: ['text-blue-700 dark:text-rose-700 dark:hover:text-rose-600'],
-        contained: ['bg-blue-500 text-white'],
-        outlined: ['outline outline-1 outline-blue-500 text-blue-500'],
+        contained: ['bg-rose-800 text-white'],
+        outlined: ['outline outline-1 outline-rose-700 text-rose-700'],
       },
       size: {
         small: ['text-sm', 'py-1', 'px-2', 'rounded-sm'],
